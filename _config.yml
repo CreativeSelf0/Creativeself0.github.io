@@ -4,7 +4,7 @@
 theme: jekyll-theme-chirpy
 
 # Only if your site type is Github Pages project and there is no custom domain name, modify the value below to '/project name'.
-baseurl: '/Creativeself0'
+baseurl: '/Creativeself0.github.io'
 
 # The language of the site › https://www.w3.org/International/questions/qa-choosing-language-tags
 # If a file with the same name exists in the folder `_data/locales`, the layout language will also change,
