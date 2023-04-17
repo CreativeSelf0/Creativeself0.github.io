@@ -15,27 +15,27 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: America/Los_Angeles
+timezone: Asia/Riyadh
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: ma7dev       # main title
+title: CreativeSelf       # main title
 
 tagline: thinking out loud   # subtitle
 
 description: >-                        # Used by seo meta and atom feeds
-  Personal blog of Mazen Alotaibi
+  Personal blog of Abdulmajeed Al-Muarik
 
 # Fill in the protocol and domain name of your website, for example, 'https://username.github.io'
-url: 'https://ma7.dev'
+url: 'https://creativeself.github.io'
 
-author: Mazen Alotaibi    # full name
+author: Abdulmajeed Al-Muarik    # full name
 
 github:
-  username: ma7dev
+  username: CreativeSelf0
 
 linkedin:
-  username: ma7dev     # Github username
+  username: abdulmajed-almarek     # Github username
 
 # twitter:
 #   username: ma7dev       # Twitter username
@@ -44,22 +44,22 @@ linkedin:
 #   username: ma7dev
 
 # I am using Notion page
-notion:
-  username: ma7dev
+# notion:
+#   username: ma7dev
 
-goodreads:
-  username: ma7dev
+# goodreads:
+#   username: ma7dev
 social:
-  name: Mazen Alotaibi                  # will appear as the copyright holder in the footer
-  email: sudomaze@gmail.com             # email address
+  name: Abdulmajeed Al-Muarik                  # will appear as the copyright holder in the footer
+  email: abdulmajeedmarek@gmail.com             # email address
   links:
     # The first link will be the copyright owner's link
-    - https://ma7.dev/
+    - https://creativeself.github.io
     # - https://twitter.com/ma7dev      #twitter homepage
-    - https://github.com/ma7dev       # Github homepage
+    - https://github.com/CreativeSelf0       # Github homepage
     # uncomment to add more links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/ma7dev
+    - https://www.linkedin.com/in/abdulmajed-almarek
 
 google_site_verification:       # fill in your verification string
 
@@ -81,7 +81,7 @@ iconfont_css:
   - //cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css
 
 google_analytics:
-  id: 'G-RK9LRGVP0T'              # Fill in your Google Analytics ID
+  id: 'G-X6276ZDHJZ'              # Fill in your Google Analytics ID
   # Google Analytics Page Views Settings
   pv:
     proxy_endpoint:   # Fill in Google App Engine's Google Analytics superProxy endpoint
@@ -105,7 +105,7 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # Sidebar avatar, supports local or CROS resources
-avatar: /avatar.png
+avatar: /avatar.jpeg
 
 # Set the content to display the right sidebar
 panel:
