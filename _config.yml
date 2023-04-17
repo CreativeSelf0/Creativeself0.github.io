@@ -21,7 +21,7 @@ timezone: Asia/Riyadh
 # --------------------------
 title: CreativeSelf       # main title
 
-tagline: thinking out loud   # subtitle
+tagline: Less is More   # subtitle
 
 description: >-                        # Used by seo meta and atom feeds
   Personal blog of Abdulmajeed Al-Muarik
@@ -37,18 +37,7 @@ github:
 linkedin:
   username: abdulmajed-almarek     # Github username
 
-# twitter:
-#   username: ma7dev       # Twitter username
 
-# myanimelist:
-#   username: ma7dev
-
-# I am using Notion page
-# notion:
-#   username: ma7dev
-
-# goodreads:
-#   username: ma7dev
 social:
   name: Abdulmajeed Al-Muarik                  # will appear as the copyright holder in the footer
   email: abdulmajeedmarek@gmail.com             # email address

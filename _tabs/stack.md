@@ -3,12 +3,8 @@ layout: post
 toc: true
 title: Stack
 icon: bi bi-stack
-order: 4
+order: 5
 ---
-
-<img src="https://media1.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif?cid=ecf05e4748wgae5cn0f5wcs1anttvjmy43y2a6zlrba63dd9&rid=giphy.gif&ct=g">
-
-I am working on it.
 
 ## Software Development
 ### Programming Languages
@@ -22,7 +18,6 @@ I am working on it.
 * Package Management: [poetry](https://python-poetry.org/)
 * Unit tests framework: [pytest](https://docs.pytest.org/en/7.2.x/)
 * Managing and Maintaining pre-commit hooks: [pre-commit](https://pre-commit.com/)
-* Packaging software: [Docker](https://www.docker.com/)
 * Interactive Notebooks: [Jupyter](https://jupyter.org/)
 
 
@@ -55,19 +50,15 @@ I am working on it.
 * Calendar: [Google Calendar](https://www.google.com/calendar)
 * Browser: [Chrome](https://www.google.com/chrome/)
 * Bookmarker, Project Management, and General Writing: [Notion](https://www.notion.so/)
-* Knowledge Management: [Obsidian](https://obsidian.md/)
+* Knowledge Management: [Obsidian](https://obsidian.md/) & [Inkdrop](https://www.inkdrop.app/)
 * LaTeX Writing: [Overleaf](https://www.overleaf.com/)
 
 ### Software Engineering
 * Text-editor: [VS Code](https://code.visualstudio.com/)
-* Text-editor within Terminal: [Vim](https://www.vim.org/)
 * Terminal: [terminator](https://gnometerminator.blogspot.com/p/introduction.html)
-* Research Paper Manager: [Zotero](https://www.zotero.org/)
 
 ### Research
 * Research Paper Manager: [Zotero](https://www.zotero.org/)
 
 ### Personal
-* Todos Manager: [Todoist](https://todoist.com/)
-* Password Manager: [LastPass](https://www.lastpass.com/)
-* Music: [Spotify](https://www.spotify.com/)
+* Music: [Spotify](https://www.spotify.com/) & [Youtube Music](https://music.youtube.com/) & [SoundCloud](https://soundcloud.com/)

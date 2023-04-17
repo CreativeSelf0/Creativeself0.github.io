@@ -3,7 +3,7 @@ layout: post
 toc: true
 title: Lists
 icon: bi bi-list-columns-reverse
-order: 4
+order: 3
 ---
 
 Keep in mind, anything that is **bolded** means that I either enjoy consuming the content or I always consume it, *italic* means I lost interest a long time ago but you might like it, and no text-styling means that it is on my radar.

@@ -1,7 +1,7 @@
 # ---
 # title: Site
 # icon: iconfont icon-info
-# order: 6
+# order: 5
 # ---
 
 # ## How have I built this website?
@@ -10,7 +10,6 @@
 
 # - Built with: [Jekyll](https://jekyllrb.com/)
 # - Hosting service: [GitHub Pages](https://pages.github.com/)
-# - Domain provider: [Google Domains](https://domains.google/)
 # - PDF: [LaTeX](https://en.wikibooks.org/wiki/LaTeX)
 
 # ### Libraries
