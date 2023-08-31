@@ -1,5 +1,7 @@
 ---
 layout: post
+categories: [Productivity]
+tags: [Reflection]
 title: 'Reflections on the Essence of Meaningful Work: Beyond the Daily Grind'
 date: 2023-08-31 03:03 +0300
 ---
