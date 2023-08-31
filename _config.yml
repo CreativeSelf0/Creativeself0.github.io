@@ -116,7 +116,7 @@ panel:
     toc: true
 
 comments:
-  active: 'disqus'  # Post comment area global switch, for example, 'disqus'. Leave empty to disable
+  active: 'waline'  # Post comment area global switch, for example, 'disqus'. Leave empty to disable
   # active option can be as follows:
   # disqus comment system > https://disqus.com/
   disqus:
@@ -133,8 +133,8 @@ comments:
     avatar: mp          # default avatar › https://valine.js.org/avatar.html
   # Waline comment system is an improved version of Valine, with a backend and more secure. › https://waline.js.org/
   waline:
-    server: https://myblog-comments.vercel.app/    # Vercal server address
-    placeholder: 说点什么吧！    # Text to display when the comment box is blank
+    server: https://creativeself-comment-system.vercel.app/    # Vercal server address
+    placeholder: Write Something！    # Text to display when the comment box is blank
     avatar: mp          # default avatar › https://waline.js.org/guide/client/avatar.html
   # Giscus Options › https://giscus.app
   giscus:
