@@ -50,7 +50,7 @@ order: 5
 * Calendar: [Google Calendar](https://www.google.com/calendar)
 * Browser: [Chrome](https://www.google.com/chrome/)
 * Bookmarker, Project Management, and General Writing: [Notion](https://www.notion.so/)
-* Knowledge Management: [Obsidian](https://obsidian.md/) & [Inkdrop](https://www.inkdrop.app/)
+* Knowledge Management: [Obsidian](https://obsidian.md/)
 * LaTeX Writing: [Overleaf](https://www.overleaf.com/)
 
 ### Software Engineering
