@@ -1,4 +1,4 @@
-name: "Jekyll Deploy Debug"
+name: "Jekyll Deploy"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout repository
@@ -19,7 +19,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
-        continue-on-error: false
 
       # Install ruby-build and Ruby
       - name: Install Ruby with ruby-build
@@ -30,38 +29,27 @@ jobs:
           cd ..
           sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
           sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
-        continue-on-error: false
 
       # Add Ruby to PATH
       - name: Add Ruby to PATH
-        run: |
-          echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
-          export PATH="/opt/hostedtoolcache/Ruby/3.1.4/x64/bin:$PATH"
-        continue-on-error: false
+        run: echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
 
-      # Debug Ruby installation
-      - name: Debug Ruby Installation
+      # Set GEM_HOME to avoid permission issues
+      - name: Configure GEM_HOME
         run: |
-          echo "Ruby Version:"
-          ruby -v
-          echo "Gem Version:"
-          gem -v
-          echo "Bundler Version:"
-          bundler -v
-        continue-on-error: false
+          mkdir -p $HOME/.gem
+          echo "export GEM_HOME=$HOME/.gem" >> $GITHUB_ENV
+          echo "export PATH=$HOME/.gem/bin:$PATH" >> $GITHUB_ENV
 
-      # Install Bundler and dependencies
-      - name: Install Bundler and Jekyll
+      # Install Bundler and Dependencies
+      - name: Install Bundler and Dependencies
         run: |
           gem install bundler
           bundle install
-        continue-on-error: false
 
       # Build Jekyll site
       - name: Build Jekyll Site
-        run: |
-          bundle exec jekyll build
-        continue-on-error: false
+        run: bundle exec jekyll build
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
