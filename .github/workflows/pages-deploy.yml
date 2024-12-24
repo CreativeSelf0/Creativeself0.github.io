@@ -18,24 +18,27 @@ jobs:
         with:
           fetch-depth: 0 # for posts's lastmod
 
-      - name: Install Dependencies for Ruby
+      - name: Install System Dependencies
         run: |
           sudo apt update
           sudo apt install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
 
-      - name: Install Ruby
+      - name: Install Ruby Using ruby-build
         run: |
           git clone https://github.com/rbenv/ruby-build.git
           cd ruby-build
           sudo ./install.sh
+          cd ..
           sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
           sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
 
-      - name: Set Ruby Path
+      - name: Add Ruby to Path
         run: echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
 
-      - name: Verify Ruby
-        run: ruby -v
+      - name: Verify Ruby Installation
+        run: |
+          ruby -v
+          gem -v
 
       - name: Install Bundler
         run: |
