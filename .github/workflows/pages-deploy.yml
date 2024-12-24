@@ -1,4 +1,5 @@
-name: "Automatic build"
+name: "Automatic Build"
+
 on:
   push:
     branches:
@@ -9,21 +10,22 @@ on:
       - LICENSE
 
 jobs:
-  continuous-delivery:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # for posts's lastmod
+      # Check out the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
+      # Install dependencies required for Ruby
       - name: Install System Dependencies
         run: |
           sudo apt update
           sudo apt install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
 
-      - name: Install Ruby Using ruby-build
+      # Install ruby-build and use it to install Ruby
+      - name: Install ruby-build and Ruby
         run: |
           git clone https://github.com/rbenv/ruby-build.git
           cd ruby-build
@@ -32,18 +34,28 @@ jobs:
           sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
           sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
 
-      - name: Add Ruby to Path
+      # Add Ruby to PATH
+      - name: Add Ruby to PATH
         run: echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
 
-      - name: Verify Ruby Installation
+      # Verify Ruby Installation
+      - name: Verify Ruby and Bundler
         run: |
           ruby -v
-          gem -v
-
-      - name: Install Bundler
-        run: |
           gem install bundler
-          bundle install
+          bundler -v
 
-      - name: Deploy
-        run: bash tools/deploy.sh
+      # Install Jekyll dependencies
+      - name: Install Jekyll Dependencies
+        run: bundle install
+
+      # Build the Jekyll site
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build
+
+      # Deploy the site to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
