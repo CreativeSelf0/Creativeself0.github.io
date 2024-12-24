@@ -1,59 +1,38 @@
-name: "Jekyll Deploy"
-
+name: "Automatic build"
 on:
   push:
     branches:
       - master
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - LICENSE
 
 jobs:
-  build-and-deploy:
+  continuous-delivery:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      # Install system dependencies
-      - name: Install Dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
-
-      # Install ruby-build and Ruby
-      - name: Install Ruby with ruby-build
-        run: |
-          git clone https://github.com/rbenv/ruby-build.git
-          cd ruby-build
-          sudo ./install.sh
-          cd ..
-          sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
-          sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
-
-      # Add Ruby to PATH
-      - name: Add Ruby to PATH
-        run: echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
-
-      # Set GEM_HOME to avoid permission issues
-      - name: Configure GEM_HOME
-        run: |
-          mkdir -p $HOME/.gem
-          echo "export GEM_HOME=$HOME/.gem" >> $GITHUB_ENV
-          echo "export PATH=$HOME/.gem/bin:$PATH" >> $GITHUB_ENV
-
-      # Install Bundler and Dependencies
-      - name: Install Bundler and Dependencies
-        run: |
-          gem install bundler
-          bundle install
-
-      # Build Jekyll site
-      - name: Build Jekyll Site
-        run: bundle exec jekyll build
-
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          fetch-depth: 0 # for posts's lastmod
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+
+      - name: Verify Ruby and Bundler
+        run: |
+          ruby -v
+          bundler -v
+      - name: Deploy
+        run: bash tools/deploy.sh
+
+      - name: Debug Deployment
+        if: failure() # Run only if a step fails
+        run: |
+          echo "Deployment failed. Debugging..."
+          ls -la
