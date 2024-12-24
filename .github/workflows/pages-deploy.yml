@@ -18,22 +18,29 @@ jobs:
         with:
           fetch-depth: 0 # for posts's lastmod
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.1
-          bundler-cache: true
-
-      - name: Verify Ruby and Bundler
+      - name: Install Dependencies for Ruby
         run: |
-          ruby -v
-          bundler -v
+          sudo apt update
+          sudo apt install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
+
+      - name: Install Ruby
+        run: |
+          git clone https://github.com/rbenv/ruby-build.git
+          cd ruby-build
+          sudo ./install.sh
+          sudo ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
+          sudo touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
+
+      - name: Set Ruby Path
+        run: echo "/opt/hostedtoolcache/Ruby/3.1.4/x64/bin" >> $GITHUB_PATH
+
+      - name: Verify Ruby
+        run: ruby -v
+
+      - name: Install Bundler
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Deploy
         run: bash tools/deploy.sh
-
-      - name: Debug Deployment
-        if: failure() # Run only if a step fails
-        run: |
-          echo "Deployment failed. Debugging..."
-          ls -la
