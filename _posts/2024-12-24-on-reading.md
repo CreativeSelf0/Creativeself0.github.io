@@ -20,4 +20,4 @@ Instead of chasing the impossible ideal of a "perfect" book or paper, I’ve sta
 
 Ultimately, the value of reading lies not just in the content we consume but in the act of deciding itself. Each choice, no matter how imperfect, is a step forward—a small victory against the chaos of indecision. Perhaps that’s the real lesson in all of this: the courage to embrace imperfection and move forward anyway.
 
-In an infinite library of knowledge, every door we open illuminates the path ahead. The challenge isn’t to read it all but to read with intention—to carve meaning from abundance and connect the finite with the infinite.
+In an infinite library of knowledge, every door we open illuminates the path ahead. The challenge isn’t to read it all but to read with intention—to carve meaning from abundance and connect the finite with the infinite..
