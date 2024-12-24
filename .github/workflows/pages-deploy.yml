@@ -19,10 +19,21 @@ jobs:
           fetch-depth: 0 # for posts's lastmod
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@086ffb1a2090c870a3f881cc91ea83aa4243d408 # v1.195.0
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 3.1
           bundler-cache: true
+
+      - name: Verify Ruby and Bundler
+        run: |
+          ruby -v
+          bundler -v
 
       - name: Deploy
         run: bash tools/deploy.sh
+
+      - name: Debug Deployment
+        if: failure() # Run only if a step fails
+        run: |
+          echo "Deployment failed. Debugging..."
+          ls -la
