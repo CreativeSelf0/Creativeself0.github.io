@@ -47,6 +47,12 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Remove Symlinks from _site
+        run: find _site -type l -delete
+
+      - name: Debug Build Directory
+        run: ls -lah _site
+
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-artifact@v4
@@ -54,6 +60,7 @@ jobs:
           name: github-pages
           path: _site
           include-hidden-files: true
+          if-no-files-founds: error
 
   # Deployment job
   deploy:
