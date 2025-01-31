@@ -57,7 +57,7 @@ jobs:
       - name: Debug Build Directory (Echo `ls` Output)
         run: |
           echo "📂 Listing contents of _site directory:"
-          ls -lah _site
+          ls -lah .
       
       - name: Remove Symlinks from _site
         run: find _site -type l -delete
