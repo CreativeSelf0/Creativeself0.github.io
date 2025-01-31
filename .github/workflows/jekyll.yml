@@ -71,8 +71,6 @@ jobs:
         with:
           name: github-pages
           path: _site
-          include-hidden-files: true
-          if-no-files-found: error
 
   # Deployment job
   deploy:
