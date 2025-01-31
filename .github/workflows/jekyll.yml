@@ -47,6 +47,8 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Fix File Permissions in _site
+        run: chmod -R a+rX _site  # Ensures correct file permissions for deployment
       - name: Remove Symlinks from _site
         run: find _site -type l -delete
 
